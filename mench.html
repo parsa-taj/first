@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        button{
+            margin: auto;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="0"></button>
+    <button id="1">1</button>
+    <button id="2">2</button>
+    <button id="3">3</button>
+    <button id="4">4</button>
+    <button id="5">5</button>
+    <button id="6">6</button>
+    <button id="7">7</button>
+    <button id="8">8</button>
+    <button id="9">9</button>
+    <button id="10">10</button>
+    <button id="11">11</button>
+    <button id="12">12</button>
+    <button id="13">13</button>
+    <button id="14">14</button>
+    <button id="15">15</button>
+    <button id="16">16</button>
+    <button id="17">17</button>
+    <button id="18">18</button>
+    <button id="19">19</button>
+    <button id="20">20</button> 
+    <button id="21">21</button>
+    <button id="22">22</button>
+    <button id="23">23</button>
+    <button id="24">24</button><br><br>
+
+   player1
+    <button id="player1" onclick="baadi1(this)"> partab tas 1</button><br><br>
+
+    player2<button id="player2" onclick="baadi2(this)"> partab tas</button>
+
+    
+    
+</body>
+<script>
+    var pattab1 = _id("player1");
+    var pattab2 = _id("player2");
+    pattab1.style.background="green";
+
+    function _id(params) {
+        return document.getElementById(params)   
+    }
+
+    function rand() {
+        return Math.floor(Math.random()*6) 
+    }
+    var isValid = true;
+    function baadi1(el) {
+        if (el.style.background=="green"){
+            tas1();
+            el.style.background="black";
+            pattab2.style.background="green";
+        }
+        else {
+            alert('please wait for player 2');
+        }
+    }
+    function baadi2(el) {
+        if (el.style.background=="green"){
+            tas2();
+            el.style.background="white";
+            pattab1.style.background="green";
+        }
+        else {
+            alert('please wait for player 1');
+        }
+    }
+
+    var num1 = 0;
+    var num2 = 0;
+
+    
+     function tas1() {
+        var preNum = num1;
+        var preElem = _id(preNum);
+        preElem.style.background = "white"
+        num1 += rand();
+        var elem = _id(num1)
+        switch (num1) {
+            case 1:
+                elem.style.background = "red";
+                break;
+            case 2:
+                elem.style.background = "red";
+                break;        
+            case 3: 
+                elem.style.background = "red";
+                break;
+            case 4:
+                elem.style.background = "red";
+                break;
+            case 5:
+                elem.style.background = "red";
+                break;   
+            case 6:
+                elem.style.background = "red";
+                    break;    
+            case 7:
+                elem.style.background = "red";
+                break;   
+            case 8:
+                elem.style.background = "red";
+                break;
+            case 9:
+                elem.style.background = "red";
+                break;
+            case 10:
+                elem.style.background = "red";
+                break;
+            case 11:
+                elem.style.background = "red";
+                break;
+            case 12:
+                elem.style.background = "red";
+                break;
+            case 13:
+                elem.style.background = "red";
+                break;
+            case 14:
+                elem.style.background = "red";
+                break;
+            case 15:
+                elem.style.background = "red";
+                break;
+            case 16:
+                elem.style.background = "red";
+                break;
+            case 17:
+                elem.style.background = "red";
+                break;
+            case 18:
+                elem.style.background = "red";
+                break;
+            case 19:
+                elem.style.background = "red";
+                break;
+            case 20:
+                elem.style.background = "red";
+                break;
+            case 21: 
+                elem.style.background = "red";
+                break;
+            case 22: 
+                elem.style.background = "red";
+                break;
+            case 23: 
+                elem.style.background = "red";
+                break;
+            case 24: 
+                elem.style.background = "red";
+                break;
+                default:
+                    alert("you finish the game");
+                    break;  
+                }      
+        if (num1==num2) {
+            num2=0;  
+        }        
+     }
+        
+        function tas2() {
+        var preNum = num2;
+        var preElem = _id(preNum);
+        preElem.style.background = "white"
+        num2 += rand();
+        var elem = _id(num2)
+        switch (num2) {
+            case 1:
+                elem.style.background = "yellow";
+                break;
+            case 2:
+                elem.style.background = "yellow";
+                break;        
+            case 3: 
+                elem.style.background = "yellow";
+                break;
+            case 4:
+                elem.style.background = "yellow";
+                break;
+            case 5:
+                elem.style.background = "yellow";
+                break;   
+            case 6:
+                elem.style.background = "yellow";
+                    break;    
+            case 7:
+                elem.style.background = "yellow";
+                break;   
+            case 8:
+                elem.style.background = "yellow";
+                break;
+            case 9:
+                elem.style.background = "yellow";
+                break;
+            case 10:
+                elem.style.background = "yellow";
+                break;
+            case 11:
+                elem.style.background = "yellow";
+                break;
+            case 12:
+                elem.style.background = "yellow";
+                break;
+            case 13:
+                elem.style.background = "yellow";
+                break;
+            case 14:
+                elem.style.background = "yellow";
+                break;
+            case 15:
+                elem.style.background = "yellow";
+                break;
+            case 16:
+                elem.style.background = "yellow";
+                break;
+            case 17:
+                elem.style.background = "yellow";
+                break;
+            case 18:
+                elem.style.background = "yellow";
+                break;
+            case 19:
+                elem.style.background = "yellow";
+                break;
+            case 20:
+                elem.style.background = "yellow";
+                break;
+            case 21: 
+                elem.style.background = "yellow";
+                break;
+            case 22: 
+                elem.style.background = "yellow";
+                break;
+            case 23: 
+                elem.style.background = "yellow";
+                break;
+            case 24: 
+                elem.style.background = "yellow";
+                break;
+                default:
+                    alert("you finish the game");
+                    break;  
+                }      
+        if (num1==num2) {
+            num1=0;  
+        }        
+    }    
+        
+    
+ 
+
+
+     
+        
+    
+</script>
+</html>

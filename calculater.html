@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <input type="text" placeholder="number 1" id="in01" onchange="validate(this)" onclick="showBorder(this)" ><br> <span id="err1"></span>
+    <input type="text" placeholder="number 2" id="in02" onchange="validate(this)" onclick="showBorder(this)"><br>
+    <span id="err2"></span>
+    <input type="button" value="sum" onclick="sum()">
+    <input type="button" value="minus" onclick="minus()">
+    <input type="button" value="multiple"  onclick="Multiple()">
+    <input type="button" value="divide" onclick="divide()">
+<br><p id="p01"></p>
+</body>
+<script>
+    var d=document;
+    function validate(elem){
+    if(isNaN(elem.value)){
+            d.getElementById("err1").innerHTML="please enter just number!!";
+            this.value="";
+        d.getElementById("in02").style.display="none"; }
+
+    else {d.getElementById("err1").innerHTML="";elem.style.border="5px solid green";
+    d.getElementById("in02").style.display="inline";} }
+    
+function sum(){
+    var x= d.getElementById("in01").value;
+    var y= d.getElementById("in02").value;
+    d.getElementById("p01").innerHTML=Number(x)+Number(y);
+}
+function minus(){
+    var x= d.getElementById("in01").value;
+    var y= d.getElementById("in02").value;
+    d.getElementById("p01").innerHTML=Number(x)-Number(y);
+}
+
+function divide(){
+    var x= d.getElementById("in01").value;
+    var y= d.getElementById("in02").value;
+    d.getElementById("p01").innerHTML=Number(x)/Number(y);
+}
+function Multiple(){
+    var x= d.getElementById("in01").value;
+    var y= d.getElementById("in02").value;
+    d.getElementById("p01").innerHTML=Number(x)*Number(y);
+}
+
+
+</script>
+
+
+</html>

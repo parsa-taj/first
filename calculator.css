@@ -1,0 +1,29 @@
+
+*{
+    text-align: center;
+    vertical-align: middle;
+}
+input[type=text]{
+    width: 30%;
+    height: 15px;
+    border: none;
+    border-bottom:1px dashed red ;
+    padding: 20px 50px;
+    margin-bottom: 10px;
+}
+input[type=button]{
+    width: 9%;
+    padding: 15px ;
+   background-color:gold ;
+   color: firebrick;
+
+}
+span{
+    font-size: x-large;
+    color: red;
+}
+p{
+    font-size: xx-large;
+    color: violet;
+
+}

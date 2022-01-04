@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="se1" onchange="showCities(this.value)">
+        <option value="kerman">kerman</option>
+        <option value="yazd">yazd</option>
+
+    </select>
+    <select name="" id="se2">
+        
+    </select>
+    
+</body>
+<script>
+    var $=document;
+    var select_2= $.getElementById("se2");
+    var kerman_cities=["rafsanjan","sirjan", "bardsie"];
+    var yazd_cities=["yazd","mehriz"];
+    function showCities(val){
+        if (val=="kerman"){
+            for (let i = 0; i < kerman_cities.length; i++) {
+                var el=$.createElement("option");
+                select_2.append(el);
+                el.innerHTML=kerman_cities[i]; 
+            }
+            // for (let a = 0; a < select_2.length; a++) {
+            //     if(kerman_cities.includes(select_2[i].value)){
+            //         break;
+            //     }
+            //     else{
+            //         select_2[i].remove()
+
+            //     }
+                
+            // }
+            
+            
+        }
+        if (val=="yazd"){
+            for (let i = 0; i < yazd_cities.length; i++) {
+                var el=$.createElement("option");
+                select_2.append(el);
+                el.innerHTML=yazd_cities[i]; 
+            }
+            
+            
+        }
+        
+  
+
+
+    }
+
+   
+</script>
+</html>

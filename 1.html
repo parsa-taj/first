@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" list="data-list" id="in" onkeypress="showSuggestion()"  >
+    <datalist id="data-list" >
+        <option value="ok"></option>
+        
+    </datalist>
+ <script>
+    var  $=document;
+    var array=["برنامه","برنامه نویسی ","طراحی سایت","برنامه نویسی با ری اکت"];
+    var mainEl=$.getElementById("data-list");
+    function showSuggestion(){
+        var val=$.getElementById("in").value;
+        for (let i = 0; i < array.length; i++) {
+            let res=array[i].search(val);
+            if (res==-1) {
+                break;  
+            }
+            else {
+                var el=$.createElement("option");
+                mainEl.append(el);
+                el.value=array[i];
+            }
+            
+            
+        }
+
+    } 
+
+ </script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    
+        input{
+            width: 30%;
+            height: 15%;
+            border: 3px dashed black;
+            margin-bottom: 10px;
+            
+
+        }
+        p{
+            color: red;
+            font-size: larger;
+        }
+        .base{
+            display: grid;
+            grid-template-columns: 160px 160px 160px;
+            align-items: center;
+            
+            grid-gap: 5px;
+
+
+        }
+        .nnum{
+            display: inline;
+            width: 150px;
+            height: 100px;
+            background-color: darkblue;
+            opacity: 0.6;
+            color: deeppink;
+            font-size: larger;
+            text-align: center;        
+        }
+        button{
+            width: 315px;
+            height: 100px;
+            grid-column: 2/4;
+            background-color: green;
+            opacity: 0.6;
+        }
+        .nnum:hover,button:hover{
+            opacity: 1;
+            font-size: xx-large;
+
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p01"></p>
+    <input type="text" id="input" onchange="inputStyle(this)" onkeyup="validate(this)"   >
+    
+    <div class="base">
+        <div id="num1" class="num1 nnum" onclick="showNum(this)"><p>1</p></div>
+        <div id="num2" class="num2 nnum" onclick="showNum(this)"><p>2</p></div>
+        <div id="num3" class="num3 nnum" onclick="showNum(this)"><p>3</p></div>
+        <div id="num4" class="num4 nnum" onclick="showNum(this)"><p>4</p></div>
+        <div id="num5" class="num5 nnum" onclick="showNum(this)"><p>5</p></div>
+        <div id="num6" class="num6 nnum" onclick="showNum(this)"><p>6</p></div>
+        <div id="num7" class="num7 nnum" onclick="showNum(this)"><p>7</p></div>
+        <div id="num8" class="num8 nnum" onclick="showNum(this)"><p>8</p></div>
+        <div id="num9" class="num9 nnum" onclick="showNum(this)"><p>9</p></div>
+        <div class="num+ nnum" onclick="sum()" ><p>+</p></div>
+        <div class="num- nnum" onclick="minus()"><p>-</p></div>
+        <div class="num/ nnum" onclick="division()"><p>/</p></div>
+        <div class="num* nnum" onclick="multiple1()"><p>*</p></div>
+        <button id="btn1" onclick="showResult()"> =</button>
+        <p id="result"></p>
+        
+
+    </div>
+</body>
+<script>
+    // var inputValue=(d.getElementById("input").value);
+    var d=document;
+    function inputStyle(element){
+        element.style.border="3px solid green";
+    //    d.getElementById("input").style.border="3px solid green";
+    var validInput=true;
+    }
+    function validate(element){
+        if(isNaN(element.value)){
+            if (element.value.includes(",")) {
+                element.style.border="3px solid green";    
+                    }       
+      else { d.getElementById("p01").innerHTML=" please dont enter string";
+            element.style.border="3px solid red"; validInput=false; }}
+        
+       else{ element.style.border="3px solid green"; 
+        d.getElementById("p01").innerHTML="";  } }
+        
+     function showNum(element){
+        // var inp=(d.getElementById("input").value);
+   
+       if(element.id=="num1"){
+        d.getElementById("input").value+="1";}
+        if(element.id=="num2"){
+        d.getElementById("input").value+="2";}
+        if(element.id=="num3"){
+        d.getElementById("input").value+="3";}
+        if(element.id=="num4"){
+        d.getElementById("input").value+="4";}
+        if(element.id=="num5"){
+        d.getElementById("input").value+="5";}
+        if(element.id=="num6"){
+        d.getElementById("input").value+="6";}
+        if(element.id=="num7"){
+        d.getElementById("input").value+="7";}
+        if(element.id=="num8"){
+        d.getElementById("input").value+="8";}
+        if(element.id=="num9"){
+            //  inputValue+="9";}}
+        d.getElementById("input").value+="9";}}
+var total=0;
+
+
+    function sum(){
+        
+        var inputValue=(d.getElementById("input").value);
+        var numbers=inputValue.split(",");
+        numbers.forEach(element => {
+          let numElemet=Number(element);
+            total+=numElemet;
+        });
+    d.getElementById("input").value=total;
+    }
+    function minus(){
+        
+        var inputValue=(d.getElementById("input").value);
+        var numbers=inputValue.split(",");
+        numbers.forEach(element => {
+          let numElemet=Number(element);
+            total-=numElemet;
+        });
+    d.getElementById("input").value=total;
+    }
+    function multiple1(){
+        var result=1;
+        
+        var inputValue=(d.getElementById("input").value);
+        var numbers=inputValue.split(",");
+        numbers.forEach(element => {
+          let numElemet=Number(element);
+            result*=numElemet;
+        });  
+    d.getElementById("input").value=result;
+    }
+    function division(){
+        var result=1;
+        var inputValue=(d.getElementById("input").value);
+        var numbers=inputValue.split(",");
+        numbers.forEach(element => {
+            if(element=="0"){
+                alert("zero division Error")
+            }
+          let numElemet=Number(element);
+            total/=numElemet;
+        });
+    d.getElementById("input").value=result;
+    }
+    function showResult(){
+        
+        
+        d.getElementById("result").innerHTML=d.getElementById("input").value;
+    }
+
+
+
+        //    inp+="1";
+
+    //        alert("12");
+    //    }
+        //  switch(element){
+            
+        //      case element.id=="num1":{inp+="1";
+        //      d.getElementById("input").value+="1";alert("12"); }
+        //  }
+         
+                    
+       
+</script>
+</html>

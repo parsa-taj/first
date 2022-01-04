@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="calculator_2.css">
+    </head>
+    <body>
+        <input type="text" placeholder="number 1" id="in01" onchange="validate(this)" onclick="showBorder(this)" >
+        <input type="text"  id="in02" onchange="checked()" onclick="showBorder(this)">
+        <input type="text" placeholder="number 2" id="in03" onchange="validate(this)" onclick="showBorder(this)" ><button onclick="result()">=</button><span id="sp"></span>
+        <p id="err1"></p>
+    </body>
+    </body>
+
+    <script>
+      var d=document;
+    function validate(elem){
+    if(isNaN(elem.value)){
+            d.getElementById("err1").innerHTML="please enter just number!!";
+            this.value="";
+        d.getElementById("in02").style.display="none";
+        d.getElementById("in03").style.display="none"; }
+
+    else {d.getElementById("err1").innerHTML="";elem.style.border="2px solid green";
+    d.getElementById("in02").style.display="inline";} 
+    d.getElementById("in03").style.display="inline"; }
+function result(){
+   var x= d.getElementById("in01").value;
+   var y= d.getElementById("in03").value;
+   var z= d.getElementById("in02").value;
+   switch(z){
+       case "+" :d.getElementById("sp").innerText=Number(x)+Number(y);break;
+       case "-":d.getElementById("sp").innerHTML=Number(x)-Number(y);break;
+       case "*":d.getElementById("sp").innerHTML=Number(x)*Number(y);break;
+       case "/":d.getElementById("sp").innerHTML=Number(x)/Number(y);break;
+       default:window.style.background="red";
+   }
+   
+
+
+}
+    </script>
+</html>

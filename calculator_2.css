@@ -1,0 +1,17 @@
+*{
+    margin: auto;
+}
+#in01,#in03{
+    width: 20px;
+}
+#in02{
+    width: 5px;
+}
+p{
+    color: tomato;
+}
+span{
+    color: violet;
+}
+
+   

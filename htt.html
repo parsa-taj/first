@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pp"></p>
+    <p class="pp">ujghjh</p>
+</body>
+<script>
+
+  var time=document.getElementById("pp");
+var hours=2;
+var mintes=30;
+var seconds=60
+ var timer= setInterval(() => {
+    time.innerHTML=hours+":"+mintes+":"+seconds;
+    seconds--;
+    if(seconds==0){
+      mintes--;
+      seconds=59;}
+      if(mintes==0){
+        hours--;
+        mintes=59;
+        if(hours==0&&mintes==0&&seconds==0){
+          clearInterval(timer)
+
+        }
+      }
+    
+  }, 1000);
+  
+</script>
+   
+</html>
